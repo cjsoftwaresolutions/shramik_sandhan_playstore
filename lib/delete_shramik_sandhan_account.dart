@@ -36,11 +36,12 @@ class _DeleteShramikSandhanAccountState extends State<DeleteShramikSandhanAccoun
 
         if (response.statusCode == 200) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Account deletion request sent successfully, Your Account will be deleted in next 30 days. Thank you')),
+            SnackBar(content: Text('Account deletion request sent successfully, Your Account will be deleted in next 30 days. Thank you'),
+              duration: Duration(seconds: 30),),
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Failed to send request. Please try again.')),
+            SnackBar(content: Text('Failed to send request. Please try again.'), duration: Duration(seconds: 10)),
           );
         }
       } catch (error) {
